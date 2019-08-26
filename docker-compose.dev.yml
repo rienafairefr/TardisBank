@@ -4,7 +4,9 @@ services:
     build: db
 
   api:
-    build: server
+    build: 
+      context: server
+      dockerfile: dev.Dockerfile
     depends_on:
       - mail
 

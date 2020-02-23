@@ -7,7 +7,7 @@ services:
     build:
       context: server
       target: build
-    command: ["dotnet", "watch", "-p", "./TardisBank.Api", "run"]
+    command: ["dotnet", "watch", "-p", "TardisBank.Api", "run"]
     volumes:
       - ./server/src:/app
     depends_on:

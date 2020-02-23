@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
+using Westwind.AspNetCore.LiveReload;
+using System.IO;
 
 namespace TardisBank.Api
 {
@@ -11,6 +13,9 @@ namespace TardisBank.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRouting();
+            services.AddLiveReload(config => {
+                config.FolderToMonitor = Path.GetFullPath("..");
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -19,6 +24,7 @@ namespace TardisBank.Api
 
             app.UseErrorHandler(env.IsDevelopment());
 
+            app.UseLiveReload();
             app.Use(Authentication.Authenticate(
                 token => Authentication.DecryptToken(
                     appConfiguration.EncryptionKey, 

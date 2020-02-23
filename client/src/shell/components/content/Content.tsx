@@ -29,7 +29,7 @@ const GetContent: React.SFC<ContentProps> = (props: ContentProps) => {
         <div>No such account</div>
       );
     case ContentView.Empty:
-      return <div>Nothing to see</div>;
+      return <div>Nothing to see here</div>;
     default:
       return <div>Unknown ContentView</div>;
   }

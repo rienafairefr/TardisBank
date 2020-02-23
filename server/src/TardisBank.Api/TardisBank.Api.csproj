@@ -12,6 +12,7 @@
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.2.4" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="Npgsql" Version="4.0.1" />
+    <PackageReference Include="Westwind.AspnetCore.LiveReload" Version="0.1.5.2" />
   </ItemGroup>
 
   <ItemGroup>
